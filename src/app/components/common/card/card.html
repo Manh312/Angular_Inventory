@@ -1,0 +1,9 @@
+<div
+  class="flex flex-col justify-between w-32 h-28 rounded-lg shadow-md bg-white p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+  [style.border-top]="color ? '4px solid ' + color : 'none'"
+>
+  <div class="flex-grow flex flex-col justify-center">
+    <h3 class="text-base font-medium" [style.color]="color">{{ label }}</h3>
+    <p class="text-xl font-bold text-gray-900">{{ value }}</p>
+  </div>
+</div>

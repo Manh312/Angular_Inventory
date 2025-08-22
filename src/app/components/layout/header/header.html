@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <span class="logo">Pet Inventory</span>
+
+  <!-- Desktop Menu -->
+  <span class="spacer"></span>
+  <nav class="desktop-menu">
+    <a *ngFor="let item of menuItems" mat-button [routerLink]="item.link" class="nav-link">
+      {{ item.label }}
+    </a>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="mobile-menu">
+    <button mat-menu-item *ngFor="let item of menuItems" [routerLink]="item.link">
+      {{ item.label }}
+    </button>
+  </mat-menu>
+</mat-toolbar>

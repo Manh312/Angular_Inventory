@@ -1,0 +1,10 @@
+<button
+  mat-raised-button
+  [disabled]="disabled"
+  [routerLink]="to"
+  [class]="buttonClasses"
+  [attr.aria-disabled]="disabled"
+  title="Button"
+>
+  <ng-content></ng-content>
+</button>

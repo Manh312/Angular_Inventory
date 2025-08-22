@@ -1,0 +1,32 @@
+<div
+  class="bg-gray-100 flex justify-center items-center"
+  [style.padding]="
+    '0 ' +
+    (padding.lg * 4) + 'px ' +
+    '0 ' +
+    (padding.lg * 4) + 'px'
+  "
+  [class]="
+    'md:padding-' + (padding.md * 4) + 'px ' +
+    'sm:padding-' + (padding.sm * 4) + 'px ' +
+    'padding-' + (padding.xs * 4) + 'px'
+  "
+>
+  <div
+    class="bg-white rounded-lg transition-transform duration-200 hover:-translate-y-1"
+    [class]="
+      'shadow-' + elevation + ' ' +
+      'p-' + (padding.lg * 4) + ' ' +
+      'md:p-' + (padding.md * 4) + ' ' +
+      'sm:p-' + (padding.sm * 4) + ' ' +
+      'p-' + (padding.xs * 4) + ' ' +
+      'm-' + (margin.md * 4) + ' ' +
+      'sm:m-' + (margin.sm * 4) + ' ' +
+      'm-' + (margin.xs * 4) + ' ' +
+      'max-w-' + maxWidth.replace('px', '') + ' ' +
+      'w-full'
+    "
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

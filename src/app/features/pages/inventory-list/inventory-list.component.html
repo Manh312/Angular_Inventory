@@ -1,0 +1,57 @@
+<app-page-layout
+  [maxWidth]="'1280px'"
+  [elevation]="3"
+  [padding]="{ xs: 2, sm: 4, md: 6, lg: 10 }"
+  [margin]="{ xs: 2, sm: 4, md: 6 }"
+  class="bg-gray-50 min-h-screen"
+>
+  <div class="space-y-6">
+    <!-- Tiêu đề -->
+    <app-title
+      title="Inventory Pet Management"
+      subtitle="Manage all pets' inventory status"
+      icon="inventory"
+      class="text-center"
+    ></app-title>
+
+    <!-- Loading -->
+    <app-loading-spinner
+      *ngIf="loading$ | async"
+      class="flex justify-center py-8"
+    ></app-loading-spinner>
+
+    <!-- Nội dung -->
+    <ng-container *ngIf="!(loading$ | async) && !(error$ | async)">
+  <div class="w-full flex justify-center">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-6 px-2 sm:px-4 max-w-6xl w-full justify-items-center"
+    >
+      <app-custom-card
+        *ngFor="let item of cardItems$ | async"
+        [label]="item.label"
+        [value]="item.value ?? 0"
+        [color]="item.color"
+        class="transition-transform transform hover:scale-105"
+      ></app-custom-card>
+    </div>
+  </div>
+</ng-container>
+
+
+
+    <!-- Trạng thái trống -->
+    <app-empty-message
+      *ngIf="!(status$ | async) && !(loading$ | async) && !(error$ | async)"
+      message="No inventory data available."
+      class="max-w-md mx-auto"
+    ></app-empty-message>
+
+    <!-- Trạng thái lỗi -->
+    <app-error-message
+      *ngIf="error$ | async as error"
+      [message]="error"
+      (retry)="retry()"
+      class="max-w-md mx-auto"
+    ></app-error-message>
+  </div>
+</app-page-layout>

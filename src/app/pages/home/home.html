@@ -1,0 +1,64 @@
+<app-page-layout
+  [maxWidth]="'1280px'"
+  [elevation]="2"
+  [padding]="{ xs: 2, sm: 4, md: 6, lg: 10 }"
+  [margin]="{ xs: 2, sm: 4, md: 6 }"
+  class="bg-gray-50 min-h-screen"
+>
+  <div class="space-y-12">
+    <!-- Tiêu đề -->
+    <app-title
+      title="Welcome to Pet Inventory"
+      subtitle="Manage your pets efficiently with modern tools and analytics"
+      icon="pets"
+      class="text-center"
+    ></app-title>
+
+    <!-- Hero Section -->
+    <section class="bg-white shadow-md rounded-lg text-center pb-10">
+      <p class="text-lg text-gray-600 mb-6">
+        Track, organize, and analyze your pet inventory with ease.
+      </p>
+      <app-custom-button
+        variantKey="danger"
+        to="/inventory"
+        size="medium"
+      >
+        Get Started
+      </app-custom-button>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+      <h2 class="text-2xl font-semibold text-gray-800 text-center mb-8">
+        Key Features
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">
+            Inventory Tracking
+          </h3>
+          <p class="text-gray-600">
+            Easily track all pets with advanced filtering and sorting options.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">
+            Analytics
+          </h3>
+          <p class="text-gray-600">
+            Get insights into your pet inventory trends and statistics.
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">
+            Easy Management
+          </h3>
+          <p class="text-gray-600">
+            Manage your inventory with an intuitive and user-friendly interface.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</app-page-layout>

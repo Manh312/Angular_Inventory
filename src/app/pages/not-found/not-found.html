@@ -1,0 +1,31 @@
+<app-page-layout
+  [maxWidth]="'600px'"
+  [elevation]="4"
+  [padding]="{ xs: 2, sm: 4, md: 6, lg: 8 }"
+  [margin]="{ xs: 1, sm: 2, md: 3 }"
+>
+  <div class="not-found-page flex flex-col items-center justify-center w-full h-full">
+    <app-title
+      title="404"
+      subtitle="Page Not Found"
+      icon="error"
+      class="w-full text-center"
+    ></app-title>
+
+    <div class="flex flex-col items-center text-center mt-6 w-full max-w-md">
+      <mat-icon class="text-6xl text-red-600 mb-4">error_outline</mat-icon>
+      <p class="text-lg text-gray-700">The page you are looking for doesn't exist or has been moved.</p>
+      <p class="text-sm text-gray-500 mt-2">Please check the URL or return to the homepage.</p>
+    </div>
+
+    <div class="mt-8 text-center w-full">
+      <app-custom-button
+        variantKey="danger"
+        to="/"
+        size="medium"
+      >
+        Go Back Home
+      </app-custom-button>
+    </div>
+  </div>
+</app-page-layout>

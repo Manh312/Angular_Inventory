@@ -94,5 +94,11 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d88035a9-c75b-4000-9703-06289071849e",
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }
